@@ -1,0 +1,68 @@
+# ----------------------------------------
+# CORE PROPERTIES
+# ----------------------------------------
+# BANNER
+banner:
+  charset: UTF-8
+
+spring:
+  # PROFILES
+  profiles:
+    active: local
+  # IDENTITY
+  application:
+    name: example-manager
+  # AOP
+  aop:
+    auto: true
+    proxy-target-class: false
+  # FILE ENCODING (FileEncodingApplicationListener)
+  mandatory-file-encoding: utf-8
+  # HTTP encoding (HttpEncodingProperties)
+  http:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+    multipart:
+      max-file-size: 256MB
+      max-request-size: 256MB
+  # JPA PROPERTIES
+  jpa:
+    database: MYSQL
+    show-sql: true
+    generate-ddl: false
+    hibernate:
+      ddl-auto: none
+  # DATASOURCE COMMON PROPERTIES
+  datasource:
+     driver-class-name: com.mysql.jdbc.Driver
+     connection-timeout: 2000
+     maximum-pool-size: 20
+     type: com.alibaba.druid.pool.DruidDataSource
+     url: jdbc:mysql://localhost:3306/example_db?useSSL=false&zeroDateTimeBehavior=convertToNull&characterEncoding=utf-8
+     username: root
+     password: madan3517
+     initialSize: 5
+     minIdle: 0
+     maxActive: 500
+     maxWait: 8000
+     removeAbandoned: true
+     removeAbandonedTimeout: 180
+     timeBetweenEvictionRunsMillis: 60000
+     minEvictableIdleTimeMillis: 300000
+     validationQuery: SELECT 'x' FROM DUAL
+     validationQueryTimeout: 3000
+     testWhileIdle: true
+     testOnBorrow: true
+     testOnReturn: false
+     poolPreparedStatements: true
+     maxPoolPreparedStatementPerConnectionSize: 20
+     filters: wall,stat
+     logAbandoned: true
+
+# EMBEDDED SERVER CONFIGURATION (ServerProperties)
+server:
+  port: 30007
+  context-path: /example-www
+
