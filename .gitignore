@@ -19,3 +19,11 @@
 **/logs
 *.bak
 **/target
+**/.settings
+**/RemoteSystemsTempFiles
+.idea
+/.idea
+**/.factorypath
+**/.recommenders
+**/.classpath
+**/*.iml
